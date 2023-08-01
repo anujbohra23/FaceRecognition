@@ -5,26 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        body {
             margin: 0;
-            padding:0;
-            width:100vw;
-            height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             flex-direction: column;
             box-shadow: none;
         }
-        canvas{
-            position : absolute;
+        canvas {
+            position: absolute;
         }
     </style>
 </head>
 <body>
-    <video id="videoInput" width="720p" height = "550p" muted controls></video>
+    <video id="videoInput" width="720p" height="550p" muted controls></video>
 
-    <script defer async src="./js/face-api.min.js"></script>
-    <script defer async src="./js/script.js"></script>
+    <script defer src="./js/face-api.min.js"></script>
+    <script defer src="./js/script.js"></script>
+
+    <script>
+        // Add an event listener to ensure script.js runs after face-api.min.js is loaded
+        document.querySelector("script[src='./js/script.js']").addEventListener("load", function() {
+            console.log("All scripts loaded.");
+        });
+    </script>
 </body>
 </html>
